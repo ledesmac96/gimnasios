@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448639732062",
+    "firebase_url": "https://gimnasiokratos2020.firebaseio.com",
+    "project_id": "gimnasiokratos2020",
+    "storage_bucket": "gimnasiokratos2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448639732062:android:ee7a941d8e411400d9a7cf",
+        "android_client_info": {
+          "package_name": "com.example.gimnasio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448639732062-2p0epppg97r72ap614740dkcgn4945h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gimnasio",
+            "certificate_hash": "4ffccae6b2953ee3be0e06afa28dab3d5b1cdc38"
+          }
+        },
+        {
+          "client_id": "448639732062-h400g8645qm4u7mhf3kckb7o2fmoa0tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVTU4MnfK691g1EwBYISMhZwWyYxGOorc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448639732062-h400g8645qm4u7mhf3kckb7o2fmoa0tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
