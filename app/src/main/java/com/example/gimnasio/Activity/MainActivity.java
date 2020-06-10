@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     View headerView;
     Fragment mFragment;
     int itemSelecionado = -1, idUser = 0;
-    ImageView imgPerfil, imgBienestar;
+    ImageView imgBienestar;
     TextView txtNombre;
 
     @Override
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
 
         loadData();
-
 
     }
 
@@ -115,9 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
         itemSelecionado = itemDrawer.getItemId();
 
-        if (itemDrawer.getItemId() != R.id.item_config) {
-            ((TextView) findViewById(R.id.txtNombreUser)).setText(itemDrawer.getTitle());
-        }
+
     }
 
     private void setToolbar() {
