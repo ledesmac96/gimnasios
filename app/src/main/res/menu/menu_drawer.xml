@@ -7,9 +7,9 @@
             android:icon="@drawable/ic_menu"
             android:title="Inicio"/>
         <item
-            android:id="@+id/item_poli"
+            android:id="@+id/item_turnos"
             android:icon="@drawable/ic_menu"
-            android:title="Polideportivo"/>
+            android:title="Gestión de turnos"/>
 
 
     </group>

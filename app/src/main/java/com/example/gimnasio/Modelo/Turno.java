@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public class Turno {
 
     private String idTurno, horaInicio, horaFin, dia, mes, anio, fechaCreacion;
-    private int duracionMinutos, capacidad;
+    private int duracionMinutos, capacidad, id;
     private ArrayList<Persona> personas;
 
-    public Turno(String horaInicio, String horaFin, String dia, String mes, String anio,
+    public Turno(int id, String horaInicio, String horaFin, String dia, String mes, String anio,
                  String fechaCreacion, int duracionMinutos, int capacidad) {
+        this.id = id;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
         this.dia = dia;
@@ -18,6 +19,15 @@ public class Turno {
         this.fechaCreacion = fechaCreacion;
         this.duracionMinutos = duracionMinutos;
         this.capacidad = capacidad;
+        this.personas = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public ArrayList<Persona> getPersonas() {

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.gimnasio.Fragment.GestionTurnosFragment;
 import com.example.gimnasio.Fragment.MainFragment;
 import com.example.gimnasio.R;
 import com.google.android.material.navigation.NavigationView;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void loadData() {
+
     }
 
     private void loadViews() {
@@ -99,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
         switch (itemDrawer.getItemId()) {
             case R.id.item_inicio:
                 fragmentoGenerico = new MainFragment();
+                break;
+            case R.id.item_turnos:
+                fragmentoGenerico = new GestionTurnosFragment();
                 break;
 
         }

@@ -16,7 +16,7 @@ public class NoticiasInicioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Crea la vista de Inicio
-        view = inflater.inflate(R.layout.activity_main, container, false);
+        view = inflater.inflate(R.layout.fragment_notas_inicio, container, false);
 
         return view;
     }
