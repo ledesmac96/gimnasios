@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.cardview.widget.CardView android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="5dp"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -149,24 +155,12 @@
                     android:inputType="number"
                     android:padding="10dp" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <ProgressBar
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DNI de la persona: "
-                    android:textColor="@color/black_one"
-                    android:layout_marginTop="10dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/edtDni"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_logreg"
-                    android:inputType="number"
-                    android:padding="10dp" />
+                    android:id="@+id/progress_bar" />
 
                 <Button
                     android:id="@+id/btnGuardar"
@@ -187,4 +181,4 @@
 
     </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+</androidx.cardview.widget.CardView>

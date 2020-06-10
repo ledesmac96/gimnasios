@@ -104,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.item_turnos:
                 fragmentoGenerico = new GestionTurnosFragment();
+                ((GestionTurnosFragment)fragmentoGenerico).setFragmentManager(getSupportFragmentManager());
+                ((GestionTurnosFragment)fragmentoGenerico).setContext(getApplicationContext());
                 break;
 
         }

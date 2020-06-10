@@ -37,7 +37,7 @@ public class GestionCuotasFragment extends Fragment {
                     for (QueryDocumentSnapshot query : task.getResult()){
                         Turno turno = query.toObject(Turno.class);
                         if (turno != null){
-                            mTurnos.add(turno);
+                            //mTurnos.add(turno);
                         }
                     }
                 }

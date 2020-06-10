@@ -1,6 +1,9 @@
 package com.example.gimnasio.Modelo;
 
-public class Persona {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Persona implements Parcelable {
 
     private int dni;
     private String fechaTurno;
@@ -11,6 +14,36 @@ public class Persona {
         this.fechaTurno = fechaTurno;
         this.estado = estado;
     }
+
+    protected Persona(Parcel in) {
+        dni = in.readInt();
+        fechaTurno = in.readString();
+        estado = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(dni);
+        dest.writeString(fechaTurno);
+        dest.writeInt(estado);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Persona> CREATOR = new Creator<Persona>() {
+        @Override
+        public Persona createFromParcel(Parcel in) {
+            return new Persona(in);
+        }
+
+        @Override
+        public Persona[] newArray(int size) {
+            return new Persona[size];
+        }
+    };
 
     public int getDni() {
         return dni;

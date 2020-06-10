@@ -14,10 +14,9 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class TurnosAdapter extends RecyclerView.Adapter<TurnosAdapter.EventosViewHolder>  {
+public class TurnosAdapter extends RecyclerView.Adapter<TurnosAdapter.EventosViewHolder> {
     private ArrayList<Turno> mTurnos;
     private Context context;
-    View view;
 
     public TurnosAdapter(ArrayList<Turno> list, Context ctx) {
         this.mTurnos = list;
@@ -27,7 +26,7 @@ public class TurnosAdapter extends RecyclerView.Adapter<TurnosAdapter.EventosVie
     @NonNull
     @Override
     public EventosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_turno, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_turno, parent, false);
 
         return new EventosViewHolder(view);
     }
@@ -64,5 +63,10 @@ public class TurnosAdapter extends RecyclerView.Adapter<TurnosAdapter.EventosVie
             hFin = itemView.findViewById(R.id.txtHoraF);
             cantPer = itemView.findViewById(R.id.txtCant);
         }
+    }
+
+    public void change(ArrayList<Turno> list) {
+        mTurnos = list;
+        notifyDataSetChanged();
     }
 }

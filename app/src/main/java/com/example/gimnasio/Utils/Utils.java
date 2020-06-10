@@ -13,6 +13,7 @@ public class Utils {
     public static final String PREF_NAME = "gimnasio_kratos";
     public static final String DNI = "dni_user";
     public static final String VERIFICADO = "dni_verificado_%s";
+    public static final String TURNOS = "turno";
 
     public static void showLog(String t, String msj) {
         if (false)

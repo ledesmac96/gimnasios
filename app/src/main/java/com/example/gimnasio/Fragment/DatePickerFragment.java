@@ -2,14 +2,17 @@ package com.example.gimnasio.Fragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.os.Bundle;
 
 import java.util.Calendar;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 
 public class DatePickerFragment extends DialogFragment {
+
+    public DatePickerFragment() {
+    }
 
     private DatePickerDialog.OnDateSetListener listener;
 

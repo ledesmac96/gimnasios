@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Checkable;
 
 import com.example.gimnasio.R;
-import com.ledesma.cristian.microsde.R;
 
 import androidx.recyclerview.widget.RecyclerView;
 

@@ -1,5 +1,7 @@
 package com.example.gimnasio.Modelo;
 
+import java.util.Map;
+
 public class Usuario {
 
     private int dni;
@@ -7,17 +9,53 @@ public class Usuario {
     private String apellido;
     private String fechaRegistro;
     private String password;
+    private String reppass;
+    private String telefono;
+    private String mail;
     private int estado;
     private int tipoUsuario;
 
-    public Usuario(int dni, String nombre, String apellido, String fechaRegistro, String pass, int estado, int tipoUsuario) {
+    public Usuario(Object dni) {
+
+    }
+
+    public Usuario(int dni, String nombre, String apellido, String fechaRegistro, String password,
+                   String reppass, String telefono, String mail, int estado, int tipoUsuario) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaRegistro = fechaRegistro;
+        this.password = password;
+        this.reppass = reppass;
+        this.telefono = telefono;
+        this.mail = mail;
         this.estado = estado;
         this.tipoUsuario = tipoUsuario;
-        this.password = pass;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getReppass() {
+        return reppass;
+    }
+
+    public void setReppass(String reppass) {
+        this.reppass = reppass;
+    }
+
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getPassword() {
@@ -74,5 +112,23 @@ public class Usuario {
 
     public void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
+    }
+
+    public static Usuario toMap(Map<String, Object> mapa) {
+        if (mapa == null)
+            return null;
+        Usuario usuario = null;
+        Integer dni = Integer.valueOf(String.valueOf(mapa.get("dni")));
+        Integer estado = Integer.valueOf(String.valueOf(mapa.get("estado")));
+        Integer tipo = Integer.valueOf(String.valueOf(mapa.get("tipoUsuario")));
+        String nombre = String.valueOf(mapa.get("nombre"));
+        String apellido = String.valueOf(mapa.get("apellido"));
+        String mail = String.valueOf(mapa.get("mail"));
+        String fechaRegistro = String.valueOf(mapa.get("fechaRegistro"));
+        String contra = String.valueOf(mapa.get("password"));
+        String telefono = String.valueOf(mapa.get("telefono"));
+        usuario = new Usuario(dni, nombre, apellido, fechaRegistro, contra, "", telefono,
+                mail, estado, tipo);
+        return usuario;
     }
 }
