@@ -6,16 +6,26 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String fechaRegistro;
+    private String password;
     private int estado;
     private int tipoUsuario;
 
-    public Usuario(int dni, String nombre, String apellido, String fechaRegistro, int estado, int tipoUsuario) {
+    public Usuario(int dni, String nombre, String apellido, String fechaRegistro, String pass, int estado, int tipoUsuario) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaRegistro = fechaRegistro;
         this.estado = estado;
         this.tipoUsuario = tipoUsuario;
+        this.password = pass;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getDni() {

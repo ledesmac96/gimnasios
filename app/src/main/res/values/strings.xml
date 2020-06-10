@@ -13,4 +13,6 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="camposIncompletos">¡Por favor complete los campos!</string>
+    <string name="noData">Usuario inexistente</string>
 </resources>

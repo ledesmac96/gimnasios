@@ -2,6 +2,8 @@ package com.example.gimnasio.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.Intent;
+import android.gesture.GestureOverlayView;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +15,22 @@ import com.example.gimnasio.Activity.InfoTurnoActivity;
 import com.example.gimnasio.Adapters.TurnosAdapter;
 import com.example.gimnasio.Dialogos.NuevoTurnoDialog;
 import com.example.gimnasio.Modelo.Turno;
+import com.example.gimnasio.Activity.UsuarioVerificarActivity;
+import com.example.gimnasio.Modelo.Turno;
+import com.example.gimnasio.Modelo.Usuario;
 import com.example.gimnasio.R;
-import com.example.gimnasio.RecyclerListener.ItemClickSupport;
-import com.example.gimnasio.Utils.Utilssss;
+import com.example.gimnasio.Utils.Utils;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class GestionTurnosFragment extends Fragment {
 
     View view;
+    ArrayList<Turno> mTurnos;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView recyclerTurnos;
     ArrayList<Turno> mTurnos;
@@ -45,7 +58,33 @@ public class GestionTurnosFragment extends Fragment {
 
         loadData();
 
+        loadDatos();
+
+        getTurnos();
+
         return view;
+    }
+
+    private void loadDatos() {
+        mTurnos = new ArrayList<>();
+    }
+
+    private void getTurnos() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("turnos").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot query : task.getResult()){
+                        Turno turno = query.toObject(Turno.class);
+                        if (turno != null){
+                            mTurnos.add(turno);
+                        }
+                    }
+                }
+
+            }
+        });
     }
 
 
