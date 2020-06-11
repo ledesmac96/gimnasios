@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gimnasio.Fragment.GestionTurnosFragment;
+import com.example.gimnasio.Fragment.GestionUsuariosFragment;
 import com.example.gimnasio.Fragment.MainFragment;
 import com.example.gimnasio.R;
 import com.google.android.material.navigation.NavigationView;
@@ -107,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
                 ((GestionTurnosFragment)fragmentoGenerico).setFragmentManager(getSupportFragmentManager());
                 ((GestionTurnosFragment)fragmentoGenerico).setContext(getApplicationContext());
                 break;
+            case R.id.item_users:
+                fragmentoGenerico = new GestionUsuariosFragment();
+                ((GestionUsuariosFragment)fragmentoGenerico).setFragmentManager(getSupportFragmentManager());
+                ((GestionUsuariosFragment)fragmentoGenerico).setContext(getApplicationContext());
+                break;
 
         }
 
@@ -130,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         if (ab != null) {
             ab.setHomeAsUpIndicator(R.drawable.ic_menu);
             ab.setDisplayHomeAsUpEnabled(true);
-            ab.setTitle("Bienestar Estudiantíl");
+            ab.setTitle("Hard Cross Kratos");
             mToolbar.setTitleTextColor(getResources().getColor(R.color.colorAccent));
         }
 

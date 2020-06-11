@@ -1,5 +1,7 @@
 package com.example.gimnasio.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -8,17 +10,15 @@ import android.widget.TextView;
 
 import com.example.gimnasio.R;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class InfoUsuarioActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class InfoTurnoActivity extends AppCompatActivity implements View.OnClickListener {
-
-    TextView fechaTurno, hIni, hFin, durac, capacidad, fechaCreac, cantPers;
+    TextView dni, name;
     ImageView imgIcono;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_turno);
+        setContentView(R.layout.activity_info_usuario);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         loadViews();
@@ -32,7 +32,7 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setToolbar() {
-        ((TextView) findViewById(R.id.txtTitulo)).setText("Turnos");
+        ((TextView) findViewById(R.id.txtTitulo)).setText("Info usuarios");
     }
 
     private void loadData() {
@@ -47,13 +47,8 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
 
     private void loadViews() {
         imgIcono = findViewById(R.id.imgFlecha);
-        fechaTurno = findViewById(R.id.txtFechaT);
-        hIni = findViewById(R.id.txtHoraI);
-        hFin = findViewById(R.id.txtHoraF);
-        durac = findViewById(R.id.txtDuracion);
-        capacidad = findViewById(R.id.txtCapacid);
-        fechaCreac = findViewById(R.id.txtFechaCrea);
-        cantPers = findViewById(R.id.txtCantPers);
+        dni = findViewById(R.id.txtDni);
+        name = findViewById(R.id.txtName);
 
     }
 

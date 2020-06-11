@@ -33,9 +33,14 @@ public class TurnosAdapter extends RecyclerView.Adapter<TurnosAdapter.EventosVie
 
     @Override
     public void onBindViewHolder(@NonNull EventosViewHolder holder, int position) {
-        Turno torneo = mTurnos.get(position);
+        Turno turno = mTurnos.get(position);
 
-        holder.id.setText(torneo.getIdTurno());
+        holder.id.setText(turno.getIdTurno());
+        String fecha = turno.getDia()+"/"+turno.getMes()+"/"+turno.getAnio();
+        holder.fecha.setText(fecha);
+        holder.hIni.setText(turno.getHoraInicio());
+        holder.hFin.setText(turno.getHoraFin());
+        holder.cantPer.setText(String.valueOf(turno.getPersonas().size()));
 
     }
 

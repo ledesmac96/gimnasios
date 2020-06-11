@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gimnasio">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.ConfirmUserActivity"></activity>
+        <activity android:name=".Activity.InfoUsuarioActivity" />
+        <activity android:name=".Activity.AgregarUsuarioActivity" />
+        <activity android:name=".Fragment.PerfilAdminFragment" />
         <activity android:name=".Activity.RegistroActivity" />
-        <activity android:name=".Activity.LoginActivity" >
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,5 +25,7 @@
         <activity android:name=".Activity.InfoTurnoActivity" />
         <activity android:name=".Activity.UsuarioVerificarActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

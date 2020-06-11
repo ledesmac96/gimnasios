@@ -1,8 +1,12 @@
 package com.example.gimnasio.Modelo;
 
+import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Map;
 
-public class Usuario {
+public class Usuario implements Parcelable {
 
     private int dni;
     private String nombre;
@@ -32,6 +36,50 @@ public class Usuario {
         this.estado = estado;
         this.tipoUsuario = tipoUsuario;
     }
+
+    protected Usuario(Parcel in) {
+        dni = in.readInt();
+        nombre = in.readString();
+        apellido = in.readString();
+        fechaRegistro = in.readString();
+        password = in.readString();
+        reppass = in.readString();
+        telefono = in.readString();
+        mail = in.readString();
+        estado = in.readInt();
+        tipoUsuario = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(dni);
+        dest.writeString(nombre);
+        dest.writeString(apellido);
+        dest.writeString(fechaRegistro);
+        dest.writeString(password);
+        dest.writeString(reppass);
+        dest.writeString(telefono);
+        dest.writeString(mail);
+        dest.writeInt(estado);
+        dest.writeInt(tipoUsuario);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Usuario> CREATOR = new Creator<Usuario>() {
+        @Override
+        public Usuario createFromParcel(Parcel in) {
+            return new Usuario(in);
+        }
+
+        @Override
+        public Usuario[] newArray(int size) {
+            return new Usuario[size];
+        }
+    };
 
     public String getTelefono() {
         return telefono;
@@ -118,9 +166,9 @@ public class Usuario {
         if (mapa == null)
             return null;
         Usuario usuario = null;
-        Integer dni = Integer.valueOf(String.valueOf(mapa.get("dni")));
-        Integer estado = Integer.valueOf(String.valueOf(mapa.get("estado")));
-        Integer tipo = Integer.valueOf(String.valueOf(mapa.get("tipoUsuario")));
+        int dni = Integer.parseInt(String.valueOf(mapa.get("dni")));
+        int estado = Integer.parseInt(String.valueOf(mapa.get("estado")));
+        int tipo = Integer.parseInt(String.valueOf(mapa.get("tipoUsuario")));
         String nombre = String.valueOf(mapa.get("nombre"));
         String apellido = String.valueOf(mapa.get("apellido"));
         String mail = String.valueOf(mapa.get("mail"));

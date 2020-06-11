@@ -27,16 +27,17 @@
                 <ImageView
                     android:id="@+id/logoBienestar"
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:src="@drawable/yahoo"/>
+                    android:layout_height="120dp"
+                    android:src="@drawable/logo_kratos"/>
 
                 <TextView
                     android:id="@+id/txtNombreUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Cristian Ledesma"
-                    android:textSize="18sp" />
+                    android:textStyle="bold"
+                    android:text="Kratos User"
+                    android:textSize="22sp" />
 
             </LinearLayout>
 

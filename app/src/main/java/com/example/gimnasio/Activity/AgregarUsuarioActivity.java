@@ -1,6 +1,8 @@
 package com.example.gimnasio.Activity;
 
-import android.content.pm.ActivityInfo;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,42 +19,35 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+public class AgregarUsuarioActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class RegistroActivity extends AppCompatActivity implements View.OnClickListener {
-
+    ImageView imgIcono;
     EditText edtNombre, edtApellido, edtDni, edtCorreo, edtTelefono, edtContrasenia, edtContraseniaRepetir;
     Button btnRegister;
-    ImageView imgIcono;
     PreferenciasManager mPreferenciasManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_agregar_usuario);
 
         loadViews();
 
-        loadData();
-
         loadListener();
 
+        loadData();
+
         setToolbar();
+
     }
 
-    private void setToolbar() {
-        ((TextView) findViewById(R.id.txtTitulo)).setText("Gestión usuarios");
+    private void loadData() {
+        mPreferenciasManager = new PreferenciasManager(getApplicationContext());
     }
 
     private void loadListener() {
         btnRegister.setOnClickListener(this);
         imgIcono.setOnClickListener(this);
-    }
-
-    private void loadData() {
-        mPreferenciasManager = new PreferenciasManager(getApplicationContext());
     }
 
     private void loadViews() {
@@ -67,18 +62,20 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         btnRegister = findViewById(R.id.btnRegister);
     }
 
+    private void setToolbar() {
+        ((TextView) findViewById(R.id.txtTitulo)).setText("Agregar cliente");
+    }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnRegister:
-                register();
-                break;
+        switch (v.getId()){
             case R.id.imgFlecha:
                 onBackPressed();
                 break;
+            case R.id.btnRegister:
+                register();
+                break;
         }
-
     }
 
     private void register() {
@@ -125,4 +122,5 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             }
         });
     }
+
 }

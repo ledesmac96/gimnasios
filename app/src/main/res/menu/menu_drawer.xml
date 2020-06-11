@@ -10,7 +10,10 @@
             android:id="@+id/item_turnos"
             android:icon="@drawable/ic_menu"
             android:title="Gestión de turnos"/>
-
+        <item
+            android:id="@+id/item_users"
+            android:icon="@drawable/ic_menu"
+            android:title="Gestión de Usuarios"/>
 
     </group>
 
