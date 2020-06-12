@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.gimnasio.R;
 
-public class ConfirmUserActivity extends AppCompatActivity {
+public class PerfilUsuarioActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

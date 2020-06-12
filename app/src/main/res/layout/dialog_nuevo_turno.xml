@@ -162,6 +162,12 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/progress_bar" />
 
+                <View
+                    android:layout_gravity="center"
+                    android:layout_width="300dp"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
                 <Button
                     android:id="@+id/btnGuardar"
                     android:layout_width="250dp"

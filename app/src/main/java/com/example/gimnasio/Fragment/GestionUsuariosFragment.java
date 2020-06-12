@@ -3,17 +3,18 @@ package com.example.gimnasio.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gimnasio.Activity.AgregarUsuarioActivity;
-import com.example.gimnasio.Activity.ConfirmUserActivity;
 import com.example.gimnasio.Activity.InfoUsuarioActivity;
 import com.example.gimnasio.Adapters.UsuariosAdapter;
-import com.example.gimnasio.Modelo.Turno;
 import com.example.gimnasio.Modelo.Usuario;
 import com.example.gimnasio.R;
 import com.example.gimnasio.RecyclerListener.ItemClickSupport;
@@ -25,6 +26,10 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -36,7 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class GestionUsuariosFragment extends Fragment implements View.OnClickListener {
 
     View view;
-    CardView cardAddClient, cardConfirmar;
+    CardView cardAddClient;
     ArrayList<Usuario> mUsuarios;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView recyclerUsuarios;
@@ -44,6 +49,7 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
     FragmentManager mFragmentManager;
     ProgressBar mProgressBar;
     Context mContext;
+    EditText edtBuscar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,22 +60,58 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
 
         loadData();
 
-        loadDatos();
-
-        //getUsuarios(); HAY UN ERROR CON EL MODELO USUARIO
+        loadListener();
 
         return view;
     }
 
-    private void loadDatos() {
+    private void loadListener() {
+        cardAddClient.setOnClickListener(this);
+        edtBuscar.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                buscar(s.toString());
+            }
+        });
 
     }
 
     private void loadViews() {
+        edtBuscar = view.findViewById(R.id.edtBuscar);
         recyclerUsuarios = view.findViewById(R.id.recycler);
         cardAddClient = view.findViewById(R.id.cardAddCliente);
-        cardConfirmar = view.findViewById(R.id.cardConfirm);
         mProgressBar = view.findViewById(R.id.progress_bar);
+    }
+
+    private void buscar(String txt) {
+        Pattern pattern;
+        pattern = Pattern.compile("([0-9]+){1,8}");
+        Matcher matcher = pattern.matcher(txt);
+        if (matcher.find()) {
+            mUsuariosAdapter.filtrar(txt, Utils.LIST_DNI);
+            return;
+        }else{
+            pattern = Pattern.compile("[a-zA-Z_ ]+");
+            matcher = pattern.matcher(txt);
+            if (matcher.find()) {
+                mUsuariosAdapter.filtrar(txt, Utils.LIST_NOMBRE);
+                return;
+            } else {
+                mUsuariosAdapter.filtrar(txt, Utils.LIST_RESET);
+                return;
+            }
+        }
+
     }
 
     private void loadData() {
@@ -92,8 +134,8 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
             }
         });
 
-        cardAddClient.setOnClickListener(this);
-        cardConfirmar.setOnClickListener(this);
+        getUsuarios();
+
 
     }
 
@@ -110,12 +152,25 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
                         }
                     }
                     if (mProgressBar != null) mProgressBar.setVisibility(View.GONE);
-                    if (mUsuariosAdapter != null)
+                    if (mUsuariosAdapter != null) {
+                        sort();
                         mUsuariosAdapter.change(mUsuarios);
+
+                    }
                 }
 
             }
         });
+    }
+
+    private void sort() {
+        Comparator<Usuario> comparator = new Comparator<Usuario>() {
+            @Override
+            public int compare(Usuario o1, Usuario o2) {
+                return String.valueOf(o1.getEstado()).compareTo(String.valueOf(o2.getEstado()));
+            }
+        };
+        Collections.sort(mUsuarios, comparator);
     }
 
     public void setFragmentManager(FragmentManager fragmentManager) {
@@ -137,7 +192,7 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.cardAddCliente:
                 Intent i = new Intent(getContext(), AgregarUsuarioActivity.class);
                 startActivity(i);

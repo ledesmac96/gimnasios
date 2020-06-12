@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ConfirmUserActivity"></activity>
+        <activity android:name=".Activity.PerfilUsuarioActivity"></activity>
         <activity android:name=".Activity.InfoUsuarioActivity" />
         <activity android:name=".Activity.AgregarUsuarioActivity" />
         <activity android:name=".Fragment.PerfilAdminFragment" />

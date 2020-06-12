@@ -31,15 +31,34 @@
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/txtDni"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.1"
-                android:textColor="@color/black_one"
-                android:text="39986583"
-                android:textSize="16sp"/>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txtDni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:textColor="@color/black_one"
+                    android:text="39986583"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/txtEstado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.1"
+                    android:textStyle="bold"
+                    android:textColor="@color/black_one"
+                    android:text="ACTIVO"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

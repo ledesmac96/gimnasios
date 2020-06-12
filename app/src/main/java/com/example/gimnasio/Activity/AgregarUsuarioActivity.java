@@ -117,7 +117,7 @@ public class AgregarUsuarioActivity extends AppCompatActivity implements View.On
                 }).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Utils.showToast(getApplicationContext(), "¡Inicia sesión para verificar!");
+                Utils.showToast(getApplicationContext(), "¡Registrado!");
                 finish();
             }
         });

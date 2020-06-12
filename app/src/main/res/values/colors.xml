@@ -5,6 +5,9 @@
     <color name="colorAccent">#00ff01</color>
 
     <color name="colorKratos">#00ff01</color>
+    <color name="colorGreen">#0AAE0B</color>
+    <color name="colorOrange">#FF8C00</color>
+    <color name="colorRed">#D60C0C</color>
     <color name="black_one">#060607</color>
     <color name="black_two">#121212</color>
     <color name="white">#FFFFFF</color>
