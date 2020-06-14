@@ -12,4 +12,9 @@
     <color name="black_two">#121212</color>
     <color name="white">#FFFFFF</color>
 
+    <color name="colorMoney">#216C2A</color>
+    <color name="transparente">#00E7E7E7</color>
+    <color name="blackTransparente">#5B000000</color>
+    <color name="blackTransparente2">#22000000</color>
+
 </resources>

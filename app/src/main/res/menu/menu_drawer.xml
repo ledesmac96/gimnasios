@@ -4,16 +4,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/item_inicio"
-            android:icon="@drawable/ic_menu"
+            android:icon="@drawable/ic_gimnasio"
             android:title="Inicio"/>
         <item
             android:id="@+id/item_turnos"
-            android:icon="@drawable/ic_menu"
-            android:title="Gestión de turnos"/>
+            android:icon="@drawable/ic_turnos"
+            android:title="Gestión de Turnos"/>
         <item
             android:id="@+id/item_users"
-            android:icon="@drawable/ic_menu"
+            android:iconTint="@color/black_two"
+            android:icon="@drawable/ic_user"
             android:title="Gestión de Usuarios"/>
+        <item
+            android:id="@+id/item_cuotas"
+            android:icon="@drawable/ic_cuotas"
+            android:title="Gestión de Cuotas"/>
 
     </group>
 
@@ -24,7 +29,7 @@
         <menu>
             <item
                 android:id="@+id/item_config"
-                android:icon="@drawable/ic_menu"
+                android:icon="@drawable/ic_settings"
                 android:title="Gestión del Sistema"/>
 
         </menu>

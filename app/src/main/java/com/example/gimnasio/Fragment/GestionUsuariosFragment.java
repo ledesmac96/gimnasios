@@ -136,7 +136,6 @@ public class GestionUsuariosFragment extends Fragment implements View.OnClickLis
 
         getUsuarios();
 
-
     }
 
     private void getUsuarios() {

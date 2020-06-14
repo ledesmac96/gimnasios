@@ -13,11 +13,33 @@ public class NoticiasInicioFragment extends Fragment {
 
     View view;
 
+    public NoticiasInicioFragment() {
+        // Metodo necesario
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Crea la vista de Inicio
         view = inflater.inflate(R.layout.fragment_notas_inicio, container, false);
 
+        loadViews();
+
+        loadDataRecycler();
+
         return view;
     }
+
+
+    private void loadViews() {
+
+    }
+
+    private void loadDataRecycler() {
+
+
+
+    }
+
+
+
 }

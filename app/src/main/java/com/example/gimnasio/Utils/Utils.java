@@ -15,6 +15,8 @@ public class Utils {
     public static final String VERIFICADO = "dni_verificado_%s";
     public static final String TURNOS = "turno";
     public static final String USUARIOS = "user";
+    public static final String NOTICIA = "noticia";
+    public static final String CUOTA = "cuota";
     public static final int LIST_RESET = 1;
     public static final int LIST_NOMBRE = 2;
     public static final int LIST_DNI = 3;

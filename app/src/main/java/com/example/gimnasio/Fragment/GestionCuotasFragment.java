@@ -9,6 +9,7 @@ import com.example.gimnasio.Modelo.Turno;
 import com.example.gimnasio.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -16,9 +17,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-public class GestionCuotasFragment extends Fragment {
+public class GestionCuotasFragment extends Fragment implements View.OnClickListener {
 
     View view;
+    FloatingActionButton btnAdd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,5 +46,14 @@ public class GestionCuotasFragment extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnAdd:
+
+                break;
+        }
     }
 }

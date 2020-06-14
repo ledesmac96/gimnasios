@@ -105,6 +105,7 @@ public class GestionTurnosFragment extends Fragment {
             public void onItemClick(RecyclerView parent, View view, int position, long id) {
                 Intent i = new Intent(getContext(), InfoTurnoActivity.class);
                 i.putExtra(Utils.TURNOS, mTurnos.get(position)); //poné el tuyo we
+                i.putExtra("cant", mTurnos.size());
                 startActivity(i);
             }
         });

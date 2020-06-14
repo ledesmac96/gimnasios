@@ -62,6 +62,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Fecha turno: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -82,10 +83,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Hora inicio: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
-                                android:id="@+id/txtHoraI"
+                                android:id="@+id/txtHoraInicio"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:textSize="16sp"
@@ -100,12 +102,13 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="Hora fin: "
-                                android:textSize="16sp" />
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/txtFechaN"
+                                android:id="@+id/txtHoraFin"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textSize="16sp"
@@ -122,6 +125,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Duración: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -142,6 +146,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Fecha de creación: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -162,6 +167,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Cantidad de personas: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
@@ -182,6 +188,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Capacidad: "
+                                android:textStyle="bold"
                                 android:textSize="16sp" />
 
                             <TextView
