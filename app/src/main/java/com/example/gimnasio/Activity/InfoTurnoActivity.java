@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
     ImageView imgIcono;
     Turno mTurno;
     int cantPersonas = -1;
+    Button btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
 
     private void loadListener() {
         imgIcono.setOnClickListener(this);
+        btnAdd.setOnClickListener(this);
 
     }
 
@@ -74,6 +77,8 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
         fechaCreac = findViewById(R.id.txtFechaCrea);
         cantPers = findViewById(R.id.txtCantPers);
 
+        btnAdd = findViewById(R.id.btnAddPersonas);
+
     }
 
     @Override
@@ -81,6 +86,9 @@ public class InfoTurnoActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()){
             case R.id.imgFlecha:
                 onBackPressed();
+                break;
+            case R.id.btnAddPersonas:
+                startActivity(new Intent(getApplicationContext(), UsersListActivity.class));
                 break;
         }
     }

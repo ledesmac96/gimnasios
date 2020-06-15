@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/backgroundlogin"
@@ -12,32 +12,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Listado de turnos actuales"
-            android:textColor="@color/black_one"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
-
         <ProgressBar
             android:layout_margin="15dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/progress_bar" />
 
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,13 +40,13 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnTurno"
+                    android:id="@+id/btnCuota"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:text="NUEVO TURNO"
+                    android:text="NUEVA CUOTA"
                     android:textColor="@color/black_one"
                     android:backgroundTint="@color/colorKratos"
                     android:background="@drawable/corners_rounded_green"
@@ -64,6 +58,7 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnAdd"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.gimnasio.Fragment.GestionCuotasFragment;
 import com.example.gimnasio.Fragment.GestionTurnosFragment;
 import com.example.gimnasio.Fragment.GestionUsuariosFragment;
 import com.example.gimnasio.Fragment.MainFragment;
@@ -112,7 +113,13 @@ public class MainActivity extends AppCompatActivity {
                 ((GestionUsuariosFragment)fragmentoGenerico).setFragmentManager(getSupportFragmentManager());
                 ((GestionUsuariosFragment)fragmentoGenerico).setContext(getApplicationContext());
                 break;
-
+            case R.id.item_cuotas:
+                fragmentoGenerico = new GestionCuotasFragment();
+                ((GestionCuotasFragment)fragmentoGenerico).setFragmentManager(getSupportFragmentManager());
+                ((GestionCuotasFragment)fragmentoGenerico).setContext(getApplicationContext());
+                break;
+            case R.id.log:
+                break;
         }
 
         if (fragmentoGenerico != null) {
